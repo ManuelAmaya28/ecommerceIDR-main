@@ -1,0 +1,445 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+    font-family: 'Poppins';
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #3d71bb;
+
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, .1);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-left-color: #3D71BB;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.productos {
+    grid-area: productos;
+}
+
+
+/*VistaCelular*/
+@media(max-width: 899px) {
+
+
+    .productos {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    /*     .cajitas {
+        padding: 30px;
+    } */
+
+    .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    #botonAgregarCarrito {
+        width: 65%;
+    }
+
+    .topnav {
+        background-color: #3d71bb;
+        grid-area: topnav;
+        height: 0;
+    }
+
+    .topnav #myLinks {
+        display: none;
+    }
+
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+        text-align: center;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+        transition: .78s;
+
+    }
+
+    .navbar-toggler-icon {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 50% 25%;
+        grid-template-areas:
+            'menuBoton img-container login-container'
+            'topnav     topnav       topnav';
+        height: auto;
+    }
+
+    .logoDelfin {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    #login {
+
+        width: 20px;
+        aspect-ratio: 5/8;
+        object-fit: contain;
+
+    }
+
+    #carrito {
+        width: 20px;
+        aspect-ratio: 6/8;
+        object-fit: contain;
+    }
+
+    .menuBoton {
+        grid-area: menuBoton;
+    }
+
+    .img-container {
+        grid-area: img-container;
+    }
+
+    .login-container {
+        grid-area: login-container;
+        display: grid;
+        place-items: center;
+
+    }
+
+    .enlaces-container {
+        display: none;
+    }
+
+    .lista {
+        list-style-type: none;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto;
+        grid-template-areas:
+            'navbar'          
+            'filtrosProductos'
+            'botonesProductos'
+            'productos';
+        gap: 0px;
+        height: 100%;
+    }
+
+
+    .botonesProductos {
+        grid-area: botonesProductos;
+
+    }
+
+    .filtrosProductos {
+        grid-area: filtrosProductos;
+    }
+
+}
+
+/*Escritorio*/
+@media(min-width:900px) {
+
+    .productos {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    /*     .cajitas {
+        padding: 35px;
+    } */
+
+    .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    #botonAgregarCarrito {
+        width: 65%;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-toggler-icon {
+        display: none;
+    }
+
+    #myLinks {
+        display: none;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-rows: 60% 40%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        grid-template-areas:
+            '. img-container img-container img-container login-container'
+            '. enlaces-container enlaces-container enlaces-container login-container';
+        height: auto;
+        width: 100%;
+    }
+
+    /* CSS NAVBAR */
+    .img-container {
+        grid-area: img-container;
+        padding: 15px;
+    }
+
+
+    .lista {
+        list-style-type: none;
+        display: inline;
+        object-fit: contain;
+    }
+
+    .logoDelfin {
+        width: 100%;
+        height: 170px;
+        object-fit: contain;
+    }
+
+    .enlaces-container {
+        grid-area: enlaces-container;
+
+    }
+
+    .login-container {
+        grid-area: login-container;
+    }
+
+    #login {
+        height: 40px;
+        aspect-ratio: 5/8;
+        object-fit: contain;
+    }
+
+    #carrito {
+        height: 40px;
+        aspect-ratio: 6/8;
+        object-fit: contain;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            'navbar navbar'
+            'filtrosProductos filtrosProductos'
+            'botonesProductos botonesProductos'         
+            'productos productos';
+        gap: 0px;
+        height: 100%;
+    }
+
+    .botonesProductos {
+        grid-area: botonesProductos;
+
+    }
+
+    .filtrosProductos {
+        grid-area: filtrosProductos;
+    }
+
+}
+
+/* Modal carrito */
+h1 {
+    color: royalblue;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+#boton-carrito {
+    border: none;
+    color: royalblue;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 20px;
+    transition: all .3s;
+    width: 10%;
+    height: 30%;
+    margin: 30px;
+}
+
+#boton-carrito:hover {
+    cursor: pointer;
+    color: white;
+    background-color: royalblue;
+}
+
+#boton-carrito:focus {
+    outline: none;
+}
+
+
+p {
+    line-height: 1.8;
+}
+
+.precioProducto {
+    font-weight: 700;
+}
+
+.boton-agregar {
+    background-color: royalblue;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px;
+    border: none;
+}
+
+.boton-agregar:hover {
+    cursor: pointer;
+}
+
+.boton-agregar:focus {
+    outline: none;
+}
+
+.modal-contenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-carrito {
+    position: relative;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+}
+
+.modal-active .modal-carrito {
+    margin-top: 0;
+}
+
+.modal-carrito h3 {
+    color: royalblue;
+    padding-bottom: 5px;
+}
+
+.modal-carrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: royalblue;
+    border: none;
+    background-color: white;
+}
+
+.modal-carrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+
+.modal-carrito #carritoCerrar:focus {
+    outline: none;
+}
+
+.modal-carrito .precioProducto {
+    padding-top: 10px;
+
+}
+
+.productoEnCarrito {
+    border-left: 5px solid lightblue;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productoEnCarrito:hover {
+    border-left: 5px solid royalblue;
+}
+
+.boton-eliminar {
+    background-color: white;
+    color: red;
+    border: none;
+    font-size: 20px;
+}
+
+.boton-eliminar:hover {
+    cursor: pointer;
+}
+
+.boton-eliminar:focus {
+    outline: none;
+}
