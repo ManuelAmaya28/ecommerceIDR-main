@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 //POJO - Plain Old Java Project
 @Entity
-@Table(name="administradores") // http://127.0.0.1:8080/api/administradores/
+@Table(name="administradores") // http://127.0.0.1:8080/administradores/
 public class Administradores {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

@@ -102,7 +102,6 @@ public class Productos {
 		this.imagen = imagen;
 	}
 
-	
 	public long getCantidad() {
 		return cantidad;
 	}
@@ -110,6 +109,5 @@ public class Productos {
 	public void setCantidad(long cantidad) {
 		this.cantidad = cantidad;
 	}
-
 
 }// class productos

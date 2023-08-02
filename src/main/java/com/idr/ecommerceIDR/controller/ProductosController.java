@@ -34,15 +34,16 @@ public class ProductosController {
 		return productosService.getProducto(id);
 	}//getProduct
 	
-	
 	@DeleteMapping (path="{prodId}")
 	public Productos deleteProducto(@PathVariable("prodId") Long id) {
 		return productosService.deleteProducto(id);
 	}//deleteProduct
+
 	@PostMapping
 	public Productos addProducto (@RequestBody Productos producto) {
 		return productosService.addproducto(producto);
 	}//PostMapping
+	
 	@PutMapping (path="{prodId}")
 	public Productos updateProducto (@PathVariable("prodId") Long id, 
 			@RequestParam(required = false)String nombre,
